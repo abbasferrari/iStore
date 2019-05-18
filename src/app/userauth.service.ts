@@ -6,8 +6,8 @@ import { User } from './login/user';
   providedIn: 'root'
 })
 export class UserauthService {
-private url : string = "http://localhost:8080/userAuth";
-private geturl :string = "http://localhost:8080/getUsers";
+private url : string = "https://obscure-springs-69062.herokuapp.com/userAuth";
+private geturl :string = "https://obscure-springs-69062.herokuapp.com/getUsers";
   constructor(private http: HttpClient) { 
   }
 
