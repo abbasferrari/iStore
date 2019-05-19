@@ -1,35 +1,24 @@
 <div class="login-wrapper">
-
-
-  {{success}}
-  <form class="login" #loginForm = "ngForm" (ngSubmit)="onSubmit()"  > <!--{{loginForm.value|json}-->
-      <section class="title">
-          <h3 class="welcome">Welcome to</h3>
-          Shopping
-          <h5 class="hint">Use your Company ID to sign in or create one now</h5>
-      </section>
-      <div class="login-group" >
-          <clr-select-container>
-              <select clrSelect name="type" >
-                  <option value="local">Local Users</option>
-                  <option value="admin">Administrator</option>
-              </select>
-          </clr-select-container>
-          <clr-input-container>
-              <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="userObj.user_id"/>
-          </clr-input-container>
-          <clr-password-container>
-              <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="userObj.pass" />
-          </clr-password-container>
-          <clr-checkbox-wrapper>
-              <label>Remember me</label>
-              <input type="checkbox" name="rememberMe" clrCheckbox/>
-          </clr-checkbox-wrapper>
-          <div class="error active">
-              Invalid user name or password
-          </div>
-          <button type="submit" class="btn btn-primary">NEXT</button>
-          <a href="javascript://" class="signup">Sign up for a Company ID</a>
+        <form class="login" #loginForm = "ngForm" (ngSubmit)="onSubmit()">
+            <section class="title">
+                <h3 class="welcome">Welcome to</h3>
+                <b>IStore</b>Selling/Buying Site
+                <h5 class="hint">Sign in Or Create an account</h5>
+            </section>
+            <div class="login-group">
+                <clr-input-container>
+                    <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="u.email"/>
+                              </clr-input-container>
+                <clr-password-container>
+                    <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="u.password"/>
+                </clr-password-container>
+                <div class="error" *ngIf = loginFlag>
+                    Invalid user name or password
+                </div>
+                <button type="submit" class="btn btn-success-outline btn-block">LOGIN</button>
+                <button type="button" (click)="onRegister()" class="btn btn-success-outline btn-block">REGISTER AN ACCOUNT NOW</button>
+                
+            </div>
+        </form>
       </div>
-  </form>
-</div>
+    
